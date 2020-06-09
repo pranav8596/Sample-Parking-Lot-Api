@@ -54,5 +54,29 @@ namespace RepositoryLayer.services
             }
         }
 
+        public bool UpdateParking(AddParkingDetails parkingDetails)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand("spUpdateParkingRecord", sqlConnection);
+            sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@ParkingID", parkingDetails.ParkingID);
+            sqlCommand.Parameters.AddWithValue("@ParkingSlotNo", parkingDetails.ParkingSlotNo);
+            sqlCommand.Parameters.AddWithValue("@VehicleNo", parkingDetails.VehicleNo);
+            sqlCommand.Parameters.AddWithValue("@VehicleBrand", parkingDetails.VehicleBrand);
+            sqlCommand.Parameters.AddWithValue("@VehicleColour", parkingDetails.VehicleColour);
+            sqlCommand.Parameters.AddWithValue("@ParkingType", parkingDetails.ParkingType);
+            sqlCommand.Parameters.AddWithValue("@VehicleType", parkingDetails.VehicleType);
+            sqlConnection.Open();
+            int result = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            if (result == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

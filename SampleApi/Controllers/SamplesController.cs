@@ -38,5 +38,14 @@ namespace ParkingLotApi.Controllers
             return Ok(new { result, message });
         }
 
+        [Route("UpdateParking")]
+        [HttpPatch]
+        public ActionResult UpdateParking(AddParkingDetails parkingDetails)
+        {
+            bool result = sample.UpdateParking(parkingDetails);
+            string message = "Parking Details Updated Succesfully";
+            return Ok(new { result, message });
+        }
+
     }
 }

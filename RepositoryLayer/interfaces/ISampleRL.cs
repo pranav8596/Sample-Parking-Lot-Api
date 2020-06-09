@@ -11,6 +11,7 @@ namespace RepositoryLayer.interfaces
 
         bool DeleteParking(AddParkingDetails parkingDetails);
 
+        bool UpdateParking(AddParkingDetails parkingDetails);
 
     }
 }
