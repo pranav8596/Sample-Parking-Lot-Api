@@ -34,5 +34,25 @@ namespace RepositoryLayer.services
             }
 
         }
+
+        public bool DeleteParking(AddParkingDetails parkingDetails)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand("spDeleteParkingRecord", sqlConnection);
+            sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@ParkingID", parkingDetails.ParkingID);
+            sqlConnection.Open();
+            int result = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            if (result == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
     }
 }

@@ -25,7 +25,18 @@ namespace ParkingLotApi.Controllers
         public ActionResult AddParking(AddParkingDetails parkingDetails)
         {
             bool result = sample.AddParking(parkingDetails);
-            return Ok(new { result });
+            string message = "Parking Details Entered Succesfully";
+            return Ok(new { result, message});
         }
+
+        [Route("DeleteParking")]
+        [HttpDelete]
+        public ActionResult DeleteParking(AddParkingDetails parkingDetails)
+        {
+            bool result = sample.DeleteParking(parkingDetails);
+            string message = "Parking Details Deleted Succesfully";
+            return Ok(new { result, message });
+        }
+
     }
 }

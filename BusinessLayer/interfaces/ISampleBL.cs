@@ -8,6 +8,11 @@ namespace BusinessLayer.interfaces
     public interface ISampleBL
     {
         bool AddParking(AddParkingDetails parkingDetails);
+
+        bool DeleteParking(AddParkingDetails parkingDetails);
+
+
+
     }
 
 }

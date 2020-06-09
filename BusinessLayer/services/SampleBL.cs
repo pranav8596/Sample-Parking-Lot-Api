@@ -22,5 +22,10 @@ namespace BusinessLayer.services
         {
             return sample.AddParking(parkingDetails);
         }
+
+        public bool DeleteParking(AddParkingDetails parkingDetails)
+        {
+            return sample.DeleteParking(parkingDetails);
+        }
     }
 }

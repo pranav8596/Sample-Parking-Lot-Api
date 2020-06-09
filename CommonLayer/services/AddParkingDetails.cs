@@ -6,6 +6,8 @@ namespace CommonLayer.services
 {
     public class AddParkingDetails
     {
+        public int ParkingID { get; set; }
+
         public int ParkingSlotNo { get; set; }
 
         public string VehicleNo { get; set; }

@@ -9,5 +9,8 @@ namespace RepositoryLayer.interfaces
     {
         bool AddParking(AddParkingDetails parkingDetails);
 
+        bool DeleteParking(AddParkingDetails parkingDetails);
+
+
     }
 }
