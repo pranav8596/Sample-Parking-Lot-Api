@@ -8,12 +8,12 @@ using System.Text;
 namespace BusinessLayer.services
 {
 
-    public class SampleBL : ISampleBL
+    public class ParkingBL : IParkingBL
     {
        
-        private ISampleRL sample;
+        private IParkingRL sample;
 
-        public SampleBL(ISampleRL data)
+        public ParkingBL(IParkingRL data)
         {
             this.sample = data;
         }
@@ -23,9 +23,9 @@ namespace BusinessLayer.services
             return sample.AddParking(parkingDetails);
         }
 
-        public bool DeleteParking(AddParkingDetails parkingDetails)
+        public bool DeleteParking(int ParkingID)
         {
-            return sample.DeleteParking(parkingDetails);
+            return sample.DeleteParking(ParkingID);
         }
 
         public bool UpdateParking(AddParkingDetails parkingDetails)

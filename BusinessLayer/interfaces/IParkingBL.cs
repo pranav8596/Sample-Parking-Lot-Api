@@ -3,15 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepositoryLayer.interfaces
+namespace BusinessLayer.interfaces
 {
-    public interface ISampleRL
-    {
+    public interface IParkingBL
+    {        
         bool AddParking(AddParkingDetails parkingDetails);
 
-        bool DeleteParking(AddParkingDetails parkingDetails);
+        bool DeleteParking(int ParkingID);
 
         bool UpdateParking(AddParkingDetails parkingDetails);
 
     }
+
 }

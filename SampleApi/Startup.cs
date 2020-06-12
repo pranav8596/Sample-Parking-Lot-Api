@@ -24,14 +24,14 @@ namespace ParkingLotApi
         {
             Configuration = configuration;
         }
-
+   
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ISampleBL, SampleBL>();
-            services.AddTransient<ISampleRL, SampleRL>();
+            services.AddTransient<IParkingBL, ParkingBL>();
+            services.AddTransient<IParkingRL, SampleRL>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(c =>
             {
